@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COVID-19 Analysis</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="static/styles.css"> <!-- Include external CSS file -->
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center mb-4">COVID-19 Analysis</h1>
+        
+        {% if error_message %}
+            <div class="alert alert-danger" role="alert">
+                {{ error_message }}
+            </div>
+        {% endif %}
+
+        <form method="post" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="jsonFile">Upload JSON File:</label>
+                <input type="file" class="form-control-file" id="jsonFile" name="file">
+            </div>
+            <button type="submit" class="btn btn-primary">Upload</button>
+        </form>
+
+        {% if line_plot %}
+            <div class="row mt-5">
+                <div class="col-md-4">
+                    <h2 class="text-center mb-3">Time Series Line Plot</h2>
+                    <a href="{{ line_plot }}" download class="graph-link">
+                        <img src="{{ line_plot }}" class="img-fluid graph-image" alt="Line Plot">
+                    </a>
+                </div>
+                <div class="col-md-4">
+                    <h2 class="text-center mb-3">Scatter Plot</h2>
+                    <a href="{{ scatter_plot }}" download class="graph-link">
+                        <img src="{{ scatter_plot }}" class="img-fluid graph-image" alt="Scatter Plot">
+                    </a>
+                </div>
+                <div class="col-md-4">
+                    <h2 class="text-center mb-3">COVID-19 Cases Statistics</h2>
+                    <a href="{{ stats_plot }}" download class="graph-link">
+                        <img src="{{ stats_plot }}" class="img-fluid graph-image" alt="Statistics Plot">
+                    </a>
+                </div>
+            </div>
+        {% endif %}
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
