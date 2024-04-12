@@ -72,7 +72,9 @@ This method allows you to run the application within a Docker container without 
 
 ### Detailed explaination on how the web application work
 
-Upload JSON File: The application allows users to upload a JSON file containing COVID-19 data.
+#### Upload JSON File: 
+
+The application allows users to upload a JSON file containing COVID-19 data.
 
 #### Data Analysis: 
 After the user uploads a JSON file, this application extracts the relevant information, and then cleans the data (this includes INT written as string and verifying the dates) eg "Active Cases": "25 565" is supposed to be "Active Cases": 25565.
