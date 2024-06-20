@@ -3,7 +3,7 @@
 This is a web application built with Flask that allows users to analyze COVID-19 data provided in a JSON format. The application provides visualizations of the data in the form of line plots, scatter plots, and statistics summaries.
 
 ## Features
-
+-
 - Upload JSON file: Users can upload a JSON file containing COVID-19 data.
 - Data Analysis: The application analyzes the uploaded data and generates visualizations.
 - Visualizations:
